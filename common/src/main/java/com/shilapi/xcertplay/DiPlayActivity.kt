@@ -46,6 +46,10 @@ import com.shilapi.xcertplay.adb.LocalAdb
 import com.shilapi.xcertplay.airplay.CarPlayClusterDisplay
 import com.shilapi.xcertplay.airplay.CarPlayDisplayScale
 import com.shilapi.xcertplay.airplay.ClusterTurnCardOverlay
+import com.shilapi.xcertplay.androidauto.AndroidAutoIdentityStore
+import com.shilapi.xcertplay.androidauto.AndroidAutoImportResult
+import com.shilapi.xcertplay.androidauto.AndroidAutoSettings
+import com.shilapi.xcertplay.androidauto.AndroidAutoState
 import com.shilapi.xcertplay.compat.closeCompat
 import com.shilapi.xcertplay.hud.BydAdbAccess
 import com.shilapi.xcertplay.hud.BydNavigationOutputs
@@ -98,6 +102,7 @@ internal enum class SettingsSection {
     EXPERIMENTAL_DISPLAY,
     ADVANCED_MEDIA,
     AMBIENT_LIGHTING,
+    ANDROID_AUTO,
     CAR_BUTTON,
     AUDIO_ROUTING,
     NAVIGATION_WHEEL,
@@ -134,6 +139,7 @@ internal object SettingsInformationArchitecture {
             SettingsSection.ADVANCED_MEDIA,
             SettingsSection.NAVIGATION_WHEEL,
             SettingsSection.AMBIENT_LIGHTING,
+            SettingsSection.ANDROID_AUTO,
         ),
     )
 }
@@ -207,6 +213,7 @@ class DiPlayActivity : ComponentActivity(), AppAppearanceOwner {
     private var vehicleProbeOutcome: BydVehicleProbeOutcome? = null
     private var adbCheckGeneration = 0
     private var adbStatus: TextView? = null
+    private var androidAutoStatus: TextView? = null
     @Volatile private var updateStage = UpdateStage.IDLE
     @Volatile private var updateGeneration = 0
     @Volatile private var updateProgress: Int? = null
@@ -277,6 +284,14 @@ class DiPlayActivity : ComponentActivity(), AppAppearanceOwner {
             permissionHelp(getString(R.string.nearby_devices), getString(R.string.allow_nearby_devices_so_diplay_can_connect_to_your_paired))
         }
     }
+    private val androidAutoPermissions = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+        if (AndroidAutoSupport.missingPermissions(this).isEmpty()) {
+            enableAndroidAuto()
+        } else {
+            render()
+            permissionHelp(getString(R.string.nearby_devices), getString(R.string.settings_android_auto_failure_bluetooth_permission))
+        }
+    }
     private val locationPermission = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
         if (hasPreciseLocation()) {
             applyLocationReporting(true)
@@ -345,6 +360,8 @@ class DiPlayActivity : ComponentActivity(), AppAppearanceOwner {
             android.util.Log.e("DiPlaySetup", "CarPlay authentication could not be loaded", it)
             getString(R.string.setup_error_auth)
         }
+        AndroidAutoSupport.installGate()
+        AndroidAutoSupport.resumeIfEnabled(this)
         pendingCarHotspotSetup = savedInstanceState?.getBoolean("pending_car_hotspot") ?: false
         bydVehicleAdvancedExpanded = savedInstanceState?.getBoolean("byd_vehicle_advanced") ?: false
         settingsCategory = savedInstanceState?.getString("settings_category")
@@ -1793,6 +1810,8 @@ class DiPlayActivity : ComponentActivity(), AppAppearanceOwner {
                 showAmbientConfiguration()
             }, matchButton(0, 60))
         }
+        filteredSection(content, SettingsSection.ANDROID_AUTO,
+            getString(R.string.settings_android_auto), R.drawable.ic_dp_advanced) { card -> androidAutoSettings(card) }
         filteredSection(content, SettingsSection.LOCATION,
             getString(R.string.location), R.drawable.ic_dp_navigation) { card ->
             toggle(card, getString(R.string.report_location_to_iphone),
@@ -4757,6 +4776,7 @@ class DiPlayActivity : ComponentActivity(), AppAppearanceOwner {
     }
 
     private fun refreshStatus() {
+        androidAutoStatus?.text = AndroidAutoSupport.statusText(this, AndroidAutoState.snapshot)
         val running = CarPlayBackgroundSession.hasSession()
         status?.text = when {
             setupError != null -> getString(R.string.setup_needs_attention)
@@ -4939,6 +4959,44 @@ class DiPlayActivity : ComponentActivity(), AppAppearanceOwner {
     }
     private fun openSystem(intent: Intent) { runCatching { startActivity(intent) }.onFailure { toast(getString(R.string.open_this_setting_from_your_car_s_settings_app)) } }
     private fun toast(message: String) { Toast.makeText(this, message, Toast.LENGTH_LONG).show() }
+
+    private fun androidAutoSettings(card: LinearLayout) {
+        toggle(card, getString(R.string.settings_android_auto_receiver),
+            getString(R.string.settings_android_auto_receiver_description), AndroidAutoSettings.enabled(this)) { enabled ->
+            if (!enabled) {
+                AndroidAutoSettings.setEnabled(this, false)
+                AndroidAutoSupport.stop(this)
+            } else if (AndroidAutoSupport.missingPermissions(this).isEmpty()) {
+                enableAndroidAuto()
+            } else {
+                androidAutoPermissions.launch(AndroidAutoSupport.missingPermissions(this).toTypedArray())
+            }
+        }
+        // Spacing between these rows comes from normalizeSpacing(), like every other card.
+        val store = AndroidAutoIdentityStore(this)
+        card.addView(label(getString(R.string.settings_android_auto_identity_help, store.importPath), 14, MUTED))
+        card.addView(button(getString(R.string.settings_android_auto_identity) + VALUE_SEPARATOR +
+            AndroidAutoSupport.identityValue(this, store.status()), false) { importAndroidAutoIdentity(store) },
+            matchButton(0, CONTROL_HEIGHT_DP))
+        val statusLine = label(AndroidAutoSupport.statusText(this, AndroidAutoState.snapshot), 14, MUTED)
+        androidAutoStatus = statusLine
+        card.addView(statusLine)
+    }
+
+    private fun enableAndroidAuto() {
+        AndroidAutoSettings.setEnabled(this, true)
+        AndroidAutoSupport.start(this)
+        render()
+    }
+
+    private fun importAndroidAutoIdentity(store: AndroidAutoIdentityStore) {
+        toast(when (store.importFromFolder()) {
+            is AndroidAutoImportResult.Imported -> getString(R.string.settings_android_auto_identity_imported)
+            is AndroidAutoImportResult.FileMissing -> getString(R.string.settings_android_auto_identity_not_found, store.importPath)
+            is AndroidAutoImportResult.Rejected -> getString(R.string.settings_android_auto_identity_rejected)
+        })
+        render()
+    }
 
     private fun playTestTone(streamType: Int) {
         toneStop?.let { handler.removeCallbacks(it) }

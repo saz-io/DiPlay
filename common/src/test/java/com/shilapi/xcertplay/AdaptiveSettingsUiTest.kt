@@ -574,6 +574,8 @@ class AdaptiveSettingsUiTest {
         assertFalse(text(R.string.settings_ambient_title) in vehicle)
         assertFalse(text(R.string.settings_ambient_title) in display)
         assertTrue(text(R.string.side_panel) in advanced)
+        assertTrue(text(R.string.settings_android_auto) in advanced)
+        listOf(display, audio, vehicle).forEach { assertFalse(text(R.string.settings_android_auto) in it) }
         assertTrue(display.any { it.startsWith(text(R.string.settings_app_appearance)) })
         assertFalse(audio.any { it.startsWith(text(R.string.settings_app_appearance)) })
         assertFalse(vehicle.any { it.startsWith(text(R.string.settings_app_appearance)) })

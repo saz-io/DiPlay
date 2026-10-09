@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_android_auto">Android Auto (experimental)</string>
+    <string name="settings_android_auto_receiver">Android Auto from an Android phone</string>
+    <string name="settings_android_auto_receiver_description">Lets a paired Android phone with wireless Android Auto project to this screen over Bluetooth and Wi-Fi. It uses the Wi-Fi mode chosen for wireless CarPlay, and only one of the two runs at a time. Turning it on or off takes effect at once and does not interrupt a CarPlay session.</string>
+    <string name="settings_android_auto_identity">Head-unit identity</string>
+    <string name="settings_android_auto_identity_missing">Not imported</string>
+    <string name="settings_android_auto_identity_ready">Ready</string>
+    <string name="settings_android_auto_identity_expired">Certificate expired</string>
+    <string name="settings_android_auto_identity_unusable">Unusable</string>
+    <string name="settings_android_auto_identity_help">Put headunit.pem in %1$s, then tap to import it. DiPlay does not include this file.</string>
+    <string name="settings_android_auto_identity_imported">Identity imported</string>
+    <string name="settings_android_auto_identity_not_found">headunit.pem was not found in %1$s</string>
+    <string name="settings_android_auto_identity_rejected">headunit.pem is not a usable identity. It needs a PEM certificate and an RSA private key.</string>
+    <string name="settings_android_auto_status">Status · %1$s</string>
+    <string name="settings_android_auto_state_off">Off</string>
+    <string name="settings_android_auto_state_listening">Waiting for a paired phone</string>
+    <string name="settings_android_auto_state_network">Starting the Wi-Fi network</string>
+    <string name="settings_android_auto_state_phone_wifi">Waiting for the phone to join Wi-Fi</string>
+    <string name="settings_android_auto_state_connecting">Connecting to the phone</string>
+    <string name="settings_android_auto_state_projecting">Connected</string>
+    <string name="settings_android_auto_state_projecting_named">Connected to %1$s</string>
+    <string name="settings_android_auto_failure_busy">CarPlay is running; Android Auto waits until it ends</string>
+    <string name="settings_android_auto_failure_no_identity">Import a head-unit identity first</string>
+    <string name="settings_android_auto_failure_identity_unusable">The imported identity cannot be used</string>
+    <string name="settings_android_auto_failure_bluetooth_off">Bluetooth is off</string>
+    <string name="settings_android_auto_failure_bluetooth_permission">Allow nearby devices for DiPlay in the app permissions</string>
+    <string name="settings_android_auto_failure_network">The Wi-Fi network could not be started</string>
+    <string name="settings_android_auto_failure_phone_wifi">The phone did not join the car Wi-Fi network</string>
+    <string name="settings_android_auto_failure_incompatible">The Android Auto version on the phone is not compatible</string>
+    <string name="settings_android_auto_failure_link_lost">The Wi-Fi link to the phone was lost</string>
+    <string name="settings_android_auto_failure_protocol">The phone and DiPlay could not agree on the projection</string>
+    <string name="settings_android_auto_failure_unknown">The last attempt failed</string>
+    <string name="settings_android_auto_notification_title">Android Auto</string>
+    <string name="settings_android_auto_notification_waiting">Waiting for a phone</string>
+    <string name="settings_android_auto_notification_connected">Android Auto connected</string>
+    <string name="settings_android_auto_notification_disconnect">Disconnect</string>
+</resources>

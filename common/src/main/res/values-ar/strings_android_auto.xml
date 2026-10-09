@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_android_auto">Android Auto (تجريبي)</string>
+    <string name="settings_android_auto_receiver">Android Auto من هاتف Android</string>
+    <string name="settings_android_auto_receiver_description">يتيح لهاتف Android مقترن يدعم Android Auto لاسلكيًا عرض شاشته هنا عبر Bluetooth وWi-Fi. يستخدم وضع Wi-Fi المختار لـ CarPlay اللاسلكي، ويعمل أحدهما فقط في الوقت نفسه. يسري التشغيل أو الإيقاف فورًا ولا يقاطع جلسة CarPlay.</string>
+    <string name="settings_android_auto_identity">هوية شاشة السيارة</string>
+    <string name="settings_android_auto_identity_missing">غير مستوردة</string>
+    <string name="settings_android_auto_identity_ready">جاهزة</string>
+    <string name="settings_android_auto_identity_expired">انتهت صلاحية الشهادة</string>
+    <string name="settings_android_auto_identity_unusable">غير صالحة للاستخدام</string>
+    <string name="settings_android_auto_identity_help">ضع headunit.pem في %1$s ثم اضغط للاستيراد. لا يتضمن DiPlay هذا الملف.</string>
+    <string name="settings_android_auto_identity_imported">تم استيراد الهوية</string>
+    <string name="settings_android_auto_identity_not_found">لم يُعثر على headunit.pem في %1$s</string>
+    <string name="settings_android_auto_identity_rejected">ملف headunit.pem ليس هوية صالحة. يلزم شهادة PEM ومفتاح خاص RSA.</string>
+    <string name="settings_android_auto_status">الحالة · %1$s</string>
+    <string name="settings_android_auto_state_off">متوقف</string>
+    <string name="settings_android_auto_state_listening">في انتظار هاتف مقترن</string>
+    <string name="settings_android_auto_state_network">جارٍ تشغيل شبكة Wi-Fi</string>
+    <string name="settings_android_auto_state_phone_wifi">في انتظار انضمام الهاتف إلى Wi-Fi</string>
+    <string name="settings_android_auto_state_connecting">جارٍ الاتصال بالهاتف</string>
+    <string name="settings_android_auto_state_projecting">متصل</string>
+    <string name="settings_android_auto_state_projecting_named">متصل بـ %1$s</string>
+    <string name="settings_android_auto_failure_busy">CarPlay قيد التشغيل؛ ينتظر Android Auto حتى ينتهي</string>
+    <string name="settings_android_auto_failure_no_identity">استورد هوية شاشة السيارة أولًا</string>
+    <string name="settings_android_auto_failure_identity_unusable">تعذّر استخدام الهوية المستوردة</string>
+    <string name="settings_android_auto_failure_bluetooth_off">Bluetooth متوقف</string>
+    <string name="settings_android_auto_failure_bluetooth_permission">اسمح لـ DiPlay بالوصول إلى الأجهزة القريبة في أذونات التطبيق</string>
+    <string name="settings_android_auto_failure_network">تعذّر تشغيل شبكة Wi-Fi</string>
+    <string name="settings_android_auto_failure_phone_wifi">لم ينضم الهاتف إلى شبكة Wi-Fi الخاصة بالسيارة</string>
+    <string name="settings_android_auto_failure_incompatible">إصدار Android Auto على الهاتف غير متوافق</string>
+    <string name="settings_android_auto_failure_link_lost">انقطع اتصال Wi-Fi بالهاتف</string>
+    <string name="settings_android_auto_failure_protocol">تعذّر الاتفاق بين الهاتف وDiPlay على العرض</string>
+    <string name="settings_android_auto_failure_unknown">فشلت المحاولة الأخيرة</string>
+    <string name="settings_android_auto_notification_title">Android Auto</string>
+    <string name="settings_android_auto_notification_waiting">في انتظار هاتف</string>
+    <string name="settings_android_auto_notification_connected">Android Auto متصل</string>
+    <string name="settings_android_auto_notification_disconnect">قطع الاتصال</string>
+</resources>

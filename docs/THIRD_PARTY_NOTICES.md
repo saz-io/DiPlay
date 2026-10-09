@@ -10,6 +10,10 @@ Upstream credits [LIVI](https://github.com/f-io/LIVI) and [Showcase](https://git
 
 `common/src/main/java/com/shilapi/xcertplay/DiPlayActivity.kt` adapts the palette, visual arrangement and interface copy of the [DiAuto project](https://github.com/shihabal3amri/DiAuto). DiAuto's source is licensed under AGPL version 3. The UI file is marked AGPL-3.0-only; its license text is included in `docs/licenses/DiAuto-AGPL-3.0.txt`.
 
+## Android Auto protocol reference
+
+The experimental Android Auto receiver (`shared/src/main/java/com/shilapi/xcertplay/androidauto/`) implements a protocol that Google does not publish. Its message ids, enum values and field numbers were read from the protocol definitions in [OpenCarDev aasdk](https://github.com/opencardev/aasdk), a GPL-3.0 project derived from f1x.studio's aasdk. DiPlay is also GPL-3.0. The Kotlin code is a new implementation and copies no source from that project. The certificate and private key that aasdk ships were not used and are not part of this repository. Android Auto is a trademark of Google LLC; no Google affiliation or endorsement is implied.
+
 ## CarPlay icon
 
 The unmodified icon was obtained from Apple's developer site at:

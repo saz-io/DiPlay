@@ -2,6 +2,10 @@
 
 Changes through DiPlay 0.2.15 are documented in [0.2.15 release notes](RELEASE-NOTES-0.2.15.md). Measured checks are in [VALIDATION.md](VALIDATION.md). Device acceptance and remaining failure families are tracked in [connection reliability validation](CONNECTION_RELIABILITY.md).
 
+## Android Auto (experimental)
+
+- Add an experimental Android Auto receiver: a paired Android phone with wireless Android Auto can project to the head unit over Bluetooth and Wi-Fi, with video, audio, microphone, touch and media keys. It uses the Wi-Fi mode chosen for wireless CarPlay, cannot run together with a CarPlay session, and is off by default under Settings → Advanced. DiPlay does not include the head-unit identity that the phone requires; the owner imports it as a file. **Not yet tested with a phone or in a car.** See [Android Auto](ANDROID_AUTO.md).
+
 ## Siri and calls
 
 - Wireless calls and Siri send the head unit's microphone on Android 7.1–9 head units. CarPlay sends both as Opus, and Android provides a MediaCodec Opus encoder only from Android 10, so the microphone stopped with `stage=ENCODER` and the other side heard nothing. DiPlay now falls back to a bundled software Opus encoder ([Concentus](https://github.com/lostromb/concentus)) when the platform has none; the diagnostic report names the encoder for each microphone stream. Accepted on a BOS Mini A1 head unit (Android 9, MediaTek) with an iPhone 12 on iOS 27. Related: [#415](https://github.com/shihabal3amri/DiPlay/issues/415)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_android_auto">Android Auto (экспериментально)</string>
+    <string name="settings_android_auto_receiver">Android Auto с Android-телефона</string>
+    <string name="settings_android_auto_receiver_description">Позволяет сопряжённому Android-телефону с беспроводным Android Auto выводить изображение на этот экран по Bluetooth и Wi-Fi. Используется режим Wi-Fi, выбранный для беспроводного CarPlay; одновременно работает только один из них. Включение и выключение действуют сразу и не прерывают сеанс CarPlay.</string>
+    <string name="settings_android_auto_identity">Идентификатор головного устройства</string>
+    <string name="settings_android_auto_identity_missing">Не импортирован</string>
+    <string name="settings_android_auto_identity_ready">Готов</string>
+    <string name="settings_android_auto_identity_expired">Сертификат истёк</string>
+    <string name="settings_android_auto_identity_unusable">Непригоден</string>
+    <string name="settings_android_auto_identity_help">Поместите headunit.pem в %1$s и нажмите для импорта. В DiPlay этого файла нет.</string>
+    <string name="settings_android_auto_identity_imported">Идентификатор импортирован</string>
+    <string name="settings_android_auto_identity_not_found">Файл headunit.pem не найден в %1$s</string>
+    <string name="settings_android_auto_identity_rejected">headunit.pem непригоден. Нужны сертификат PEM и закрытый ключ RSA.</string>
+    <string name="settings_android_auto_status">Состояние · %1$s</string>
+    <string name="settings_android_auto_state_off">Выключено</string>
+    <string name="settings_android_auto_state_listening">Ожидание сопряжённого телефона</string>
+    <string name="settings_android_auto_state_network">Запуск сети Wi-Fi</string>
+    <string name="settings_android_auto_state_phone_wifi">Ожидание подключения телефона к Wi-Fi</string>
+    <string name="settings_android_auto_state_connecting">Подключение к телефону</string>
+    <string name="settings_android_auto_state_projecting">Подключено</string>
+    <string name="settings_android_auto_state_projecting_named">Подключено: %1$s</string>
+    <string name="settings_android_auto_failure_busy">Работает CarPlay; Android Auto подождёт его завершения</string>
+    <string name="settings_android_auto_failure_no_identity">Сначала импортируйте идентификатор головного устройства</string>
+    <string name="settings_android_auto_failure_identity_unusable">Импортированный идентификатор нельзя использовать</string>
+    <string name="settings_android_auto_failure_bluetooth_off">Bluetooth выключен</string>
+    <string name="settings_android_auto_failure_bluetooth_permission">Разрешите DiPlay доступ к устройствам поблизости в разрешениях приложения</string>
+    <string name="settings_android_auto_failure_network">Не удалось запустить сеть Wi-Fi</string>
+    <string name="settings_android_auto_failure_phone_wifi">Телефон не подключился к сети Wi-Fi автомобиля</string>
+    <string name="settings_android_auto_failure_incompatible">Версия Android Auto на телефоне несовместима</string>
+    <string name="settings_android_auto_failure_link_lost">Соединение Wi-Fi с телефоном потеряно</string>
+    <string name="settings_android_auto_failure_protocol">Телефон и DiPlay не смогли согласовать проекцию</string>
+    <string name="settings_android_auto_failure_unknown">Последняя попытка не удалась</string>
+    <string name="settings_android_auto_notification_title">Android Auto</string>
+    <string name="settings_android_auto_notification_waiting">Ожидание телефона</string>
+    <string name="settings_android_auto_notification_connected">Android Auto подключён</string>
+    <string name="settings_android_auto_notification_disconnect">Отключить</string>
+</resources>

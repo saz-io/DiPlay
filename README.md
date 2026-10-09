@@ -47,6 +47,7 @@ BYD DiLink 4.0 / Android 10 clean-install validation result.
 - [Install and connect](docs/INSTALL.md)
 - [Compatibility and troubleshooting](docs/COMPATIBILITY.md)
 - [Smooth wireless CarPlay](docs/SMOOTH_WIRELESS.md)
+- [Android Auto from an Android phone (experimental)](docs/ANDROID_AUTO.md)
 - [Privacy and diagnostic reports](docs/PRIVACY.md)
 - [Build from source](docs/BUILD.md) — select `mobile` for the main DiPlay app; `maphost` is a map sample.
 - [Validation](docs/VALIDATION.md)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_android_auto">Android Auto（实验性）</string>
+    <string name="settings_android_auto_receiver">来自 Android 手机的 Android Auto</string>
+    <string name="settings_android_auto_receiver_description">让已配对且支持无线 Android Auto 的 Android 手机通过蓝牙和 Wi-Fi 将画面投射到此屏幕。使用为无线 CarPlay 选择的 Wi-Fi 模式，两者同一时间只能运行一个。开启或关闭立即生效，不会中断 CarPlay 会话。</string>
+    <string name="settings_android_auto_identity">车机身份</string>
+    <string name="settings_android_auto_identity_missing">未导入</string>
+    <string name="settings_android_auto_identity_ready">就绪</string>
+    <string name="settings_android_auto_identity_expired">证书已过期</string>
+    <string name="settings_android_auto_identity_unusable">不可用</string>
+    <string name="settings_android_auto_identity_help">将 headunit.pem 放入 %1$s，然后点按导入。DiPlay 不包含此文件。</string>
+    <string name="settings_android_auto_identity_imported">身份已导入</string>
+    <string name="settings_android_auto_identity_not_found">在 %1$s 中未找到 headunit.pem</string>
+    <string name="settings_android_auto_identity_rejected">headunit.pem 不是可用的身份。需要 PEM 证书和 RSA 私钥。</string>
+    <string name="settings_android_auto_status">状态 · %1$s</string>
+    <string name="settings_android_auto_state_off">已关闭</string>
+    <string name="settings_android_auto_state_listening">等待已配对的手机</string>
+    <string name="settings_android_auto_state_network">正在启动 Wi-Fi 网络</string>
+    <string name="settings_android_auto_state_phone_wifi">等待手机加入 Wi-Fi</string>
+    <string name="settings_android_auto_state_connecting">正在连接手机</string>
+    <string name="settings_android_auto_state_projecting">已连接</string>
+    <string name="settings_android_auto_state_projecting_named">已连接到 %1$s</string>
+    <string name="settings_android_auto_failure_busy">CarPlay 正在运行；Android Auto 将等待其结束</string>
+    <string name="settings_android_auto_failure_no_identity">请先导入车机身份</string>
+    <string name="settings_android_auto_failure_identity_unusable">无法使用已导入的身份</string>
+    <string name="settings_android_auto_failure_bluetooth_off">蓝牙已关闭</string>
+    <string name="settings_android_auto_failure_bluetooth_permission">请在应用权限中允许 DiPlay 使用附近的设备</string>
+    <string name="settings_android_auto_failure_network">无法启动 Wi-Fi 网络</string>
+    <string name="settings_android_auto_failure_phone_wifi">手机未加入车辆的 Wi-Fi 网络</string>
+    <string name="settings_android_auto_failure_incompatible">手机上的 Android Auto 版本不兼容</string>
+    <string name="settings_android_auto_failure_link_lost">与手机的 Wi-Fi 连接已断开</string>
+    <string name="settings_android_auto_failure_protocol">手机与 DiPlay 无法就投射达成一致</string>
+    <string name="settings_android_auto_failure_unknown">上次尝试失败</string>
+    <string name="settings_android_auto_notification_title">Android Auto</string>
+    <string name="settings_android_auto_notification_waiting">等待手机</string>
+    <string name="settings_android_auto_notification_connected">Android Auto 已连接</string>
+    <string name="settings_android_auto_notification_disconnect">断开连接</string>
+</resources>

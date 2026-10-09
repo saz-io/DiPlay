@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_android_auto">Android Auto (experimental)</string>
+    <string name="settings_android_auto_receiver">Android Auto desde un teléfono Android</string>
+    <string name="settings_android_auto_receiver_description">Permite que un teléfono Android emparejado con Android Auto inalámbrico proyecte su pantalla aquí mediante Bluetooth y Wi-Fi. Usa el modo Wi-Fi elegido para CarPlay inalámbrico y solo uno de los dos funciona a la vez. Activarlo o desactivarlo surte efecto al instante y no interrumpe una sesión de CarPlay.</string>
+    <string name="settings_android_auto_identity">Identidad de la unidad central</string>
+    <string name="settings_android_auto_identity_missing">No importada</string>
+    <string name="settings_android_auto_identity_ready">Lista</string>
+    <string name="settings_android_auto_identity_expired">Certificado caducado</string>
+    <string name="settings_android_auto_identity_unusable">No utilizable</string>
+    <string name="settings_android_auto_identity_help">Coloca headunit.pem en %1$s y toca para importarlo. DiPlay no incluye este archivo.</string>
+    <string name="settings_android_auto_identity_imported">Identidad importada</string>
+    <string name="settings_android_auto_identity_not_found">No se encontró headunit.pem en %1$s</string>
+    <string name="settings_android_auto_identity_rejected">headunit.pem no es una identidad utilizable. Necesita un certificado PEM y una clave privada RSA.</string>
+    <string name="settings_android_auto_status">Estado · %1$s</string>
+    <string name="settings_android_auto_state_off">Desactivado</string>
+    <string name="settings_android_auto_state_listening">Esperando un teléfono emparejado</string>
+    <string name="settings_android_auto_state_network">Iniciando la red Wi-Fi</string>
+    <string name="settings_android_auto_state_phone_wifi">Esperando a que el teléfono se una al Wi-Fi</string>
+    <string name="settings_android_auto_state_connecting">Conectando con el teléfono</string>
+    <string name="settings_android_auto_state_projecting">Conectado</string>
+    <string name="settings_android_auto_state_projecting_named">Conectado a %1$s</string>
+    <string name="settings_android_auto_failure_busy">CarPlay está en uso; Android Auto espera a que termine</string>
+    <string name="settings_android_auto_failure_no_identity">Importa primero una identidad de la unidad central</string>
+    <string name="settings_android_auto_failure_identity_unusable">No se puede usar la identidad importada</string>
+    <string name="settings_android_auto_failure_bluetooth_off">El Bluetooth está desactivado</string>
+    <string name="settings_android_auto_failure_bluetooth_permission">Permite los dispositivos cercanos para DiPlay en los permisos de la aplicación</string>
+    <string name="settings_android_auto_failure_network">No se pudo iniciar la red Wi-Fi</string>
+    <string name="settings_android_auto_failure_phone_wifi">El teléfono no se unió a la red Wi-Fi del coche</string>
+    <string name="settings_android_auto_failure_incompatible">La versión de Android Auto del teléfono no es compatible</string>
+    <string name="settings_android_auto_failure_link_lost">Se perdió el enlace Wi-Fi con el teléfono</string>
+    <string name="settings_android_auto_failure_protocol">El teléfono y DiPlay no pudieron acordar la proyección</string>
+    <string name="settings_android_auto_failure_unknown">El último intento falló</string>
+    <string name="settings_android_auto_notification_title">Android Auto</string>
+    <string name="settings_android_auto_notification_waiting">Esperando un teléfono</string>
+    <string name="settings_android_auto_notification_connected">Android Auto conectado</string>
+    <string name="settings_android_auto_notification_disconnect">Desconectar</string>
+</resources>
